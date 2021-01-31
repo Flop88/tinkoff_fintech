@@ -28,20 +28,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/refreshButton"
+        android:id="@+id/previousButton"
+        style="@style/button_style"
         android:src="@drawable/ic_baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nextButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loadImageView"
-        style="@style/button_style" />
+        app:layout_constraintTop_toBottomOf="@id/loadImageView" />
 
 
     <ImageButton
         android:id="@+id/nextButton"
-        android:src="@drawable/ic_baseline_arrow_forward_24"
         style="@style/button_style"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/refreshButton"
+        app:layout_constraintStart_toEndOf="@id/previousButton"
         app:layout_constraintTop_toBottomOf="@id/loadImageView" />
 
 
