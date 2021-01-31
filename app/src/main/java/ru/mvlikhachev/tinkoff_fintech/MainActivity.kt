@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         initialization()
 
 
+
+
     }
 
     private fun initialization() {
@@ -33,13 +35,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadImage() {
         viewModel.myResponse.observe(this, { response ->
-            val media = response.gifURL.toString()
-            if (media !== null) {
-                Glide.with(this)
-                        .load(media)
-                        .into(loadImageView)
-            } else {
-                loadImageView.setImageResource(R.drawable.ic_launcher_background)
+            if (response.isSuccessful) {
+                val media = response.body()?.gifURL.toString()
+                if (media !== null) {
+                    Glide.with(this)
+                            .load(media)
+                            .into(loadImageView)
+                } else {
+                    loadImageView.setImageResource(R.drawable.ic_launcher_background)
+                }
             }
         })
     }
