@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
             loadNextImage()
         }
-
-
     }
 
     private fun initialization() {
